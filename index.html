@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khadija's Mehndi - Professional Mehndi Classes</title>
+    <link rel="icon" type="image/png" href="logo-img.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #64748b;
+            --dark-blue: #475569;
+            --light-blue: #94a3b8;
+            --blue-grey: #e2e8f0;
+            --dark-grey: #1e293b;
+            --silver: #cbd5e1;
+            --white: #FFFFFF;
+            --text-dark: #0f172a;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--blue-grey);
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            background: var(--light-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+        }
+
+        .logo-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: inherit;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--silver);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            color: var(--white);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-grey));
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 2rem;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--silver);
+            animation: fadeInUp 1s ease-out 0.2s;
+            animation-fill-mode: both;
+        }
+
+        .hero .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.4s;
+            animation-fill-mode: both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--light-blue);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(100, 116, 139, 0.3);
+            border: 2px solid transparent;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(100, 116, 139, 0.4);
+            background: transparent;
+            color: var(--light-blue);
+            border-color: var(--light-blue);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--light-blue);
+            border: 2px solid var(--light-blue);
+            margin-left: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background: var(--light-blue);
+            color: var(--white);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-blue);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        /* Course Overview */
+        .course-overview {
+            background: var(--white);
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .overview-card {
+            background: var(--blue-grey);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+            border-top: 4px solid var(--primary-blue);
+            text-align: center;
+        }
+
+        .overview-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .overview-card h3 {
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .overview-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .product-card {
+            background: var(--light-blue);
+            padding: 1.5rem;
+            border-radius: 12px;
+            color: var(--white);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 200px;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            object-fit: contain;
+        }
+
+        .duration {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        /* What You'll Learn */
+        .curriculum {
+            background: var(--blue-grey);
+        }
+
+        .curriculum-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .curriculum-item {
+            background: var(--white);
+            padding: 1.8rem;
+            border-radius: 12px;
+            border-left: 5px solid var(--primary-blue);
+            transition: all 0.3s;
+        }
+
+        .curriculum-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .curriculum-item h4 {
+            color: var(--dark-blue);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* Photos Gallery */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .gallery-item {
+            width: 100%;
+            height: 200px;
+            border-radius: 8px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Schedule */
+        .schedule {
+            background: linear-gradient(to right, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .schedule-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .schedule-details {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .schedule-details h3 {
+            color: var(--silver);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .schedule-details p {
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .highlight {
+            background: var(--light-blue);
+            color: var(--white);
+            padding: 0.2rem 0.8rem;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* Registration */
+        .registration {
+            background: var(--white);
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .contact-card {
+            background: var(--blue-grey);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: scale(1.05);
+        }
+
+        .contact-card h4 {
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+        }
+
+        .contact-card a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .contact-card a:hover {
+            color: var(--dark-blue);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-grey);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .social-links {
+            margin: 1rem 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--silver);
+            font-size: 1.2rem;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: var(--white);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--dark-blue);
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero .tagline {
+                font-size: 1rem;
+            }
+
+            .btn, .btn-secondary {
+                display: block;
+                margin: 1rem auto;
+                width: 90%;
+            }
+
+            section {
+                padding: 3rem 5%;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .overview-grid, .curriculum-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <div class="logo-img"><img src="logo-img.png" alt="Logo"></div>
+                Khadija's Mehndi
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#course">Course</a></li>
+                <li><a href="#curriculum">Curriculum</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#register">Register</a></li>
+            </ul>
+            <div class="mobile-menu" id="mobileMenu">☰</div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="logo-img" style="width: 100px; height: 100px; margin: 0 auto 2rem; font-size: 2rem;"><img src="logo-img.png" alt="Logo"></div>
+            <h1>Khadija's Mehndi</h1>
+            <p class="subtitle">STAINS OF LOVE AND TOGETHERNESS!</p>
+            <p class="tagline">Master the Art of Bridal Mehndi | 3 Months Professional Course</p>
+            <a href="#register" class="btn">Enroll Now</a>
+            <a href="#course" class="btn btn-secondary">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Course Overview -->
+    <section id="course" class="course-overview">
+        <h2 class="section-title">Course Overview</h2>
+        <div class="overview-grid">
+            <div class="overview-card">
+                <div class="icon">🎓</div>
+                <h3>Professional Certificate</h3>
+                <p>Receive an official certificate upon successful completion of the course</p>
+            </div>
+            <div class="overview-card">
+                <div class="icon">🌸</div>
+                <h3>Bridal Masterpieces</h3>
+                <p>Learn every stroke from simple florals to full bridal masterpieces</p>
+            </div>
+            <div class="overview-card">
+                <div class="icon">👥</div>
+                <h3>Live Model Practice</h3>
+                <p>Final week exam with live model practice for real-world experience</p>
+            </div>
+            <div class="overview-card">
+                <div class="icon">⏰</div>
+                <h3>Time Management</h3>
+                <p>Client-ready finishing and professional time management tips</p>
+                <span class="duration">3 Months</span>
+            </div>
+        </div>
+
+        <div class="product-showcase">
+            <div class="product-card">
+                <img src="image-1.png" alt="Bridal Cone" class="product-img">
+                <p>Professional Grade Cones</p>
+            </div>
+            <div class="product-card">
+                <img src="./logo-img.png" alt="Logo C" class="product-img">
+                <p>Brand Identity</p>
+            </div>
+            <div class="product-card">
+                <img src="./course-info.png" alt="Course Details" class="product-img">
+                <p>Complete Course Info</p>
+            </div>
+            <div class="product-card">
+                <img src="./image-2.png" alt="Storage Info" class="product-img">
+                <p>Store in Freezer</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You'll Learn -->
+    <section id="curriculum" class="curriculum">
+        <h2 class="section-title">What You'll Learn</h2>
+        <div class="curriculum-grid">
+            <div class="curriculum-item">
+                <h4>🎨 Mehndi Styles</h4>
+                <p>Arabic, Indian, Khafif, Indo-Arabic & Mandala styles</p>
+            </div>
+            <div class="curriculum-item">
+                <h4>🤲 Detailed Artwork</h4>
+                <p>Finger, feet & palm detailing techniques</p>
+            </div>
+            <div class="curriculum-item">
+                <h4>💍 Bridal Specialization</h4>
+                <p>Bridal detailing & intricate motifs</p>
+            </div>
+            <div class="curriculum-item">
+                <h4>🌿 Advanced Filling</h4>
+                <p>Professional filling techniques and patterns</p>
+            </div>
+            <div class="curriculum-item">
+                <h4>⚡ Client Ready Skills</h4>
+                <p>Finishing techniques and time management</p>
+            </div>
+            <div class="curriculum-item">
+                <h4>🎯 Practical Exam</h4>
+                <p>Final week exam with live model practice</p>
+            </div>
+        </div>
+
+        <h3 style="text-align: center; margin: 3rem 0 1rem; color: var(--dark-blue);">Course Materials & Products</h3>
+        <div class="photo-gallery">
+            <img src="./image-3.png" alt="Bridal Cone Product" class="gallery-item">
+            <img src="./stain.png" alt=" stain" class="gallery-item">
+            <img src="./design.png" alt="design2" class="gallery-item">
+            <img src="./design2.png" alt="design1" class="gallery-item">
+        </div>
+    </section>
+
+    <!-- Schedule -->
+    <section id="schedule" class="schedule">
+        <div class="schedule-content">
+            <div class="schedule-details">
+                <h3>Batch Details</h3>
+                <p><span class="highlight">Starts:</span> December 1st</p>
+                <p><span class="highlight">Duration:</span> 3 Months</p>
+                <p><span class="highlight">Days:</span> Monday - Saturday</p>
+                <p><span class="highlight">Time:</span> 2:30 PM to 4:30 PM</p>
+                <p><span class="highlight">Mode:</span> Offline Classes Only</p>
+            </div>
+            <div class="schedule-details">
+                <h3>Important Notes</h3>
+                <p>✨ Limited seats available</p>
+                <p>📍 Offline classes for hands-on learning</p>
+                <p>🏆 Certificate provided after completion</p>
+                <p>💬 Direct WhatsApp support</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration -->
+    <section id="register" class="registration">
+        <h2 class="section-title">Register Now</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">Secure your spot in our exclusive mehndi mastery course!</p>
+        
+        <div class="contact-info">
+            <div class="contact-card">
+                <h4>WhatsApp</h4>
+                <a href="https://wa.me/919535730993">+91 95357 30993</a>
+                <br>
+                <a href="https://wa.me/919538568751">+91 95385 68751</a>
+            </div>
+            <div class="contact-card">
+                <h4>Instagram</h4>
+                <a href="https://instagram.com/khadijamehndii">@khadijamehndii</a>
+                <p>Follow for amazing designs</p>
+            </div>
+            <div class="contact-card">
+                <h4>Course Inquiry</h4>
+                <p>Contact us directly for enrollment details</p>
+                <a href="https://wa.me/919535730993?text=I'm%20interested%20in%20the%20Bridal%20Mehndi%20Course">Click to Message</a>
+            </div>
+        </div>
+
+        <div style="margin-top: 2rem;">
+            <a href="https://wa.me/919535730993?text=I'm%20interested%20in%20the%20Bridal%20Mehndi%20Course" class="btn">
+                Enroll via WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Khadija's Mehndi. All rights reserved.</p>
+        <p>STAINS OF LOVE AND TOGETHERNESS!</p>
+        <p>Store in Freezer</p>
+        <div class="social-links">
+            <a href="https://instagram.com/khadijamehndii">Instagram: @khadijamehndii</a>
+            <a href="https://wa.me/919535730993">WhatsApp: +91 95357 30993</a>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(71, 85, 105, 0.95)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, var(--primary-blue), var(--dark-blue))';
+            }
+        });
+
+        // Lazy loading animation for cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.querySelectorAll('.overview-card, .curriculum-item, .contact-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Image Modal Functionality
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImg');
+        const closeBtn = document.getElementsByClassName('close')[0];
+
+        document.querySelectorAll('.product-img, .gallery-item').forEach(img => {
+            img.addEventListener('click', function() {
+                modal.style.display = 'block';
+                modalImg.src = this.src;
+            });
+        });
+
+        closeBtn.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        modal.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
