@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khadija's Mehndi - Professional Mehndi Classes</title>
+    <title>Khadija's Mehndi - Bridal & Traditional Designs</title>
     <link rel="icon" type="image/png" href="logo-img.png">
     <style>
         * {
@@ -228,19 +228,19 @@
             border-radius: 2px;
         }
 
-        /* Course Overview */
-        .course-overview {
+        /* Services Section */
+        .services {
             background: var(--white);
         }
 
-        .overview-grid {
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
 
-        .overview-card {
+        .service-card {
             background: var(--blue-grey);
             padding: 2rem;
             border-radius: 15px;
@@ -250,17 +250,17 @@
             text-align: center;
         }
 
-        .overview-card:hover {
+        .service-card:hover {
             transform: translateY(-10px);
         }
 
-        .overview-card h3 {
+        .service-card h3 {
             color: var(--dark-blue);
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
 
-        .overview-card .icon {
+        .service-card .icon {
             font-size: 3rem;
             margin-bottom: 1rem;
         }
@@ -294,47 +294,11 @@
             object-fit: contain;
         }
 
-        .duration {
-            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
-            color: var(--white);
-            padding: 0.5rem 1.5rem;
-            border-radius: 20px;
-            display: inline-block;
-            margin-top: 1rem;
-            font-weight: bold;
-        }
-
-        /* What You'll Learn */
-        .curriculum {
+        /* Gallery Section */
+        .gallery {
             background: var(--blue-grey);
         }
 
-        .curriculum-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .curriculum-item {
-            background: var(--white);
-            padding: 1.8rem;
-            border-radius: 12px;
-            border-left: 5px solid var(--primary-blue);
-            transition: all 0.3s;
-        }
-
-        .curriculum-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .curriculum-item h4 {
-            color: var(--dark-blue);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        /* Photos Gallery */
         .photo-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -355,15 +319,15 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
-        /* Schedule */
-        .schedule {
+        /* Booking Section */
+        .booking {
             background: linear-gradient(to right, var(--primary-blue), var(--dark-blue));
             color: var(--white);
             position: relative;
             overflow: hidden;
         }
 
-        .schedule-content {
+        .booking-content {
             position: relative;
             z-index: 1;
             display: grid;
@@ -372,7 +336,7 @@
             align-items: center;
         }
 
-        .schedule-details {
+        .booking-details {
             background: rgba(255,255,255,0.15);
             backdrop-filter: blur(10px);
             padding: 2rem;
@@ -380,13 +344,13 @@
             border: 1px solid rgba(255,255,255,0.2);
         }
 
-        .schedule-details h3 {
+        .booking-details h3 {
             color: var(--silver);
             margin-bottom: 1rem;
             font-size: 1.8rem;
         }
 
-        .schedule-details p {
+        .booking-details p {
             margin-bottom: 0.8rem;
             font-size: 1.1rem;
         }
@@ -399,8 +363,8 @@
             font-weight: bold;
         }
 
-        /* Registration */
-        .registration {
+        /* Appointment Section */
+        .appointment {
             background: var(--white);
             text-align: center;
         }
@@ -521,7 +485,7 @@
                 font-size: 2rem;
             }
 
-            .overview-grid, .curriculum-grid {
+            .services-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -582,10 +546,10 @@
             </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#course">Course</a></li>
-                <li><a href="#curriculum">Curriculum</a></li>
-                <li><a href="#schedule">Schedule</a></li>
-                <li><a href="#register">Register</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#booking">Booking</a></li>
+                <li><a href="#appointment">Book Now</a></li>
             </ul>
             <div class="mobile-menu" id="mobileMenu">☰</div>
         </nav>
@@ -597,36 +561,35 @@
             <div class="logo-img" style="width: 100px; height: 100px; margin: 0 auto 2rem; font-size: 2rem;"><img src="logo-img.png" alt="Logo"></div>
             <h1>Khadija's Mehndi</h1>
             <p class="subtitle">STAINS OF LOVE AND TOGETHERNESS!</p>
-            <p class="tagline">Master the Art of Bridal Mehndi | 3 Months Professional Course</p>
-            <a href="#register" class="btn">Enroll Now</a>
-            <a href="#course" class="btn btn-secondary">Learn More</a>
+            <p class="tagline">Exquisite Bridal & Traditional Mehndi Designs for Your Special Day</p>
+            <a href="#gallery" class="btn">View Gallery</a>
+            <a href="#services" class="btn btn-secondary">Our Services</a>
         </div>
     </section>
 
-    <!-- Course Overview -->
-    <section id="course" class="course-overview">
-        <h2 class="section-title">Course Overview</h2>
-        <div class="overview-grid">
-            <div class="overview-card">
-                <div class="icon">🎓</div>
-                <h3>Professional Certificate</h3>
-                <p>Receive an official certificate upon successful completion of the course</p>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="icon">💍</div>
+                <h3>Bridal Mehndi</h3>
+                <p>Intricate, full-hand bridal designs with traditional motifs and personalized elements for your wedding day</p>
             </div>
-            <div class="overview-card">
+            <div class="service-card">
                 <div class="icon">🌸</div>
-                <h3>Bridal Masterpieces</h3>
-                <p>Learn every stroke from simple florals to full bridal masterpieces</p>
+                <h3>Traditional Designs</h3>
+                <p>Classic Indian, Arabic, Khafif, and Indo-Arabic styles for festivals and special occasions</p>
             </div>
-            <div class="overview-card">
-                <div class="icon">👥</div>
-                <h3>Live Model Practice</h3>
-                <p>Final week exam with live model practice for real-world experience</p>
+            <div class="service-card">
+                <div class="icon">✨</div>
+                <h3>Custom Creations</h3>
+                <p>Unique, personalized designs tailored to your preferences and event theme</p>
             </div>
-            <div class="overview-card">
-                <div class="icon">⏰</div>
-                <h3>Time Management</h3>
-                <p>Client-ready finishing and professional time management tips</p>
-                <span class="duration">3 Months</span>
+            <div class="service-card">
+                <div class="icon">🎉</div>
+                <h3>Event Services</h3>
+                <p>Professional mehndi services for sangeet, engagements, festivals, and corporate events</p>
             </div>
         </div>
 
@@ -636,116 +599,91 @@
                 <p>Professional Grade Cones</p>
             </div>
             <div class="product-card">
-                <img src="./logo-img.png" alt="Logo C" class="product-img">
-                <p>Brand Identity</p>
+                <img src="" alt="Brand Logo" class="product-img">
+                <p>Authentic Khadija's Mehndi</p>
             </div>
             <div class="product-card">
-                <img src="./course-info.png" alt="Course Details" class="product-img">
-                <p>Complete Course Info</p>
+                <img src="" alt="Design Collection" class="product-img">
+                <p>Design Portfolio</p>
             </div>
             <div class="product-card">
-                <img src="./image-2.png" alt="Storage Info" class="product-img">
-                <p>Store in Freezer</p>
+                <img src="./image-2.png" alt="Care Instructions" class="product-img">
+                <p>Aftercare & Storage Tips</p>
             </div>
         </div>
     </section>
 
-    <!-- What You'll Learn -->
-    <section id="curriculum" class="curriculum">
-        <h2 class="section-title">What You'll Learn</h2>
-        <div class="curriculum-grid">
-            <div class="curriculum-item">
-                <h4>🎨 Mehndi Styles</h4>
-                <p>Arabic, Indian, Khafif, Indo-Arabic & Mandala styles</p>
-            </div>
-            <div class="curriculum-item">
-                <h4>🤲 Detailed Artwork</h4>
-                <p>Finger, feet & palm detailing techniques</p>
-            </div>
-            <div class="curriculum-item">
-                <h4>💍 Bridal Specialization</h4>
-                <p>Bridal detailing & intricate motifs</p>
-            </div>
-            <div class="curriculum-item">
-                <h4>🌿 Advanced Filling</h4>
-                <p>Professional filling techniques and patterns</p>
-            </div>
-            <div class="curriculum-item">
-                <h4>⚡ Client Ready Skills</h4>
-                <p>Finishing techniques and time management</p>
-            </div>
-            <div class="curriculum-item">
-                <h4>🎯 Practical Exam</h4>
-                <p>Final week exam with live model practice</p>
-            </div>
-        </div>
-
-        <h3 style="text-align: center; margin: 3rem 0 1rem; color: var(--dark-blue);">Course Materials & Products</h3>
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <h2 class="section-title">Design Portfolio</h2>
+        <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">Explore our collection of stunning bridal and traditional mehndi designs</p>
+        
         <div class="photo-gallery">
-            <img src="./image-3.png" alt="Bridal Cone Product" class="gallery-item">
-            <img src="./stain.png" alt=" stain" class="gallery-item">
-            <img src="./design.png" alt="design2" class="gallery-item">
-            <img src="./design2.png" alt="design1" class="gallery-item">
+            <img src="./image-3.png" alt="Bridal Design 1" class="gallery-item">
+            <img src="./stain.png" alt="Traditional Pattern" class="gallery-item">
+            <img src="./design.png" alt="Floral Motif" class="gallery-item">
+            <img src="./design2.png" alt="Intricate Detailing" class="gallery-item">
+            <img src="./bridal-1.png" alt="Full Hand Bridal" class="gallery-item">
+            <img src="./arabic-style.png" alt="Arabic Design" class="gallery-item">
+            <img src="./indian-style.png" alt="Indian Traditional" class="gallery-item">
+            <img src="./khafif-design.png" alt="Khafif Pattern" class="gallery-item">
         </div>
     </section>
 
-    <!-- Schedule -->
-    <section id="schedule" class="schedule">
-        <div class="schedule-content">
-            <div class="schedule-details">
-                <h3>Batch Details</h3>
-                <p><span class="highlight">Starts:</span> December 1st</p>
-                <p><span class="highlight">Duration:</span> 3 Months</p>
-                <p><span class="highlight">Days:</span> Monday - Saturday</p>
-                <p><span class="highlight">Time:</span> 2:30 PM to 4:30 PM</p>
-                <p><span class="highlight">Mode:</span> Offline Classes Only</p>
+    <!-- Booking Section -->
+    <section id="booking" class="booking">
+        <div class="booking-content">
+            <div class="booking-details">
+                <h3>How to Book</h3>
+                <p><span class="highlight">Step 1:</span> Consultation & Design Selection</p>
+                <p><span class="highlight">Step 2:</span> Schedule Your Appointment</p>
+                <p><span class="highlight">Step 3:</span> Enjoy Your Mehndi Session</p>
+                <p><span class="highlight">Duration:</span> 1-4 hours based on design</p>
             </div>
-            <div class="schedule-details">
-                <h3>Important Notes</h3>
-                <p>✨ Limited seats available</p>
-                <p>📍 Offline classes for hands-on learning</p>
-                <p>🏆 Certificate provided after completion</p>
-                <p>💬 Direct WhatsApp support</p>
+            <div class="booking-details">
+                <h3>Design Process</h3>
+                <p>✨ Personalized design consultation</p>
+                <p>📍 Flexible scheduling at your venue</p>
+                <p>🏆 Premium quality natural henna</p>
+                <p>💬 Direct WhatsApp support for queries</p>
             </div>
         </div>
     </section>
 
-    <!-- Registration -->
-    <section id="register" class="registration">
-        <h2 class="section-title">Register Now</h2>
-        <p style="font-size: 1.2rem; margin-bottom: 2rem;">Secure your spot in our exclusive mehndi mastery course!</p>
+    <!-- Appointment Section -->
+    <section id="appointment" class="appointment">
+        <h2 class="section-title">Book Your Appointment</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">Transform your special moments with our exquisite mehndi designs!</p>
         
         <div class="contact-info">
             <div class="contact-card">
                 <h4>WhatsApp</h4>
                 <a href="https://wa.me/919535730993">+91 95357 30993</a>
-                <br>
-                <a href="https://wa.me/919538568751">+91 95385 68751</a>
+                <p>Quick response for bookings</p>
             </div>
             <div class="contact-card">
                 <h4>Instagram</h4>
                 <a href="https://instagram.com/khadijamehndii">@khadijamehndii</a>
-                <p>Follow for amazing designs</p>
+                <p>Follow for daily design inspiration</p>
             </div>
             <div class="contact-card">
-                <h4>Course Inquiry</h4>
-                <p>Contact us directly for enrollment details</p>
-                <a href="https://wa.me/919535730993?text=I'm%20interested%20in%20the%20Bridal%20Mehndi%20Course">Click to Message</a>
+                <h4>Special Events</h4>
+                <p>Book for weddings, festivals & parties</p>
+                <a href="https://wa.me/919535730993?text=I%20want%20to%20book%20mehndi%20service">Book Now</a>
             </div>
         </div>
 
         <div style="margin-top: 2rem;">
-            <a href="https://wa.me/919535730993?text=I'm%20interested%20in%20the%20Bridal%20Mehndi%20Course" class="btn">
-                Enroll via WhatsApp
+            <a href="https://wa.me/919535730993?text=I%20want%20to%20book%20mehndi%20service" class="btn">
+                Book via WhatsApp
             </a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Khadija's Mehndi. All rights reserved.</p>
+        <p>&copy; 2025 Khadija's Mehndi. All rights reserved.</p>
         <p>STAINS OF LOVE AND TOGETHERNESS!</p>
-        <p>Store in Freezer</p>
         <div class="social-links">
             <a href="https://instagram.com/khadijamehndii">Instagram: @khadijamehndii</a>
             <a href="https://wa.me/919535730993">WhatsApp: +91 95357 30993</a>
@@ -800,7 +738,7 @@
         }, observerOptions);
 
         // Observe all cards
-        document.querySelectorAll('.overview-card, .curriculum-item, .contact-card').forEach(card => {
+        document.querySelectorAll('.service-card, .contact-card').forEach(card => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(30px)';
             card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
